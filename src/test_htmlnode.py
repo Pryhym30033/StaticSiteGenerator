@@ -1,6 +1,6 @@
 import unittest
 
-from htmlnode import HTMLNode
+from htmlnode import *
 
 class TestHTMLNode(unittest.TestCase):
     def test_Nodes(self):
@@ -12,5 +12,13 @@ class TestHTMLNode(unittest.TestCase):
         self.assertIsNone(testNode3.props)
         self.assertIsNotNone(testNode2.children)
         self.assertNotEqual(testNode.tag, testNode1.tag)
+
+    def test_ParentTest(self):
+        grandchildNode = LeafNode("b", "grandchild")
+        parentNode = ParentNode("div", [grandchildNode])
+        grandparentNode = ParentNode("div", [parentNode])
+        self.assertEqual(grandparentNode.to_html(), "<div><div><b>grandchild</b></div></div>")
+        self.assertNotEqual(grandparentNode.to_html(), parentNode.to_html())
+        self.assertIsNone(parentNode.props)
 if __name__ == "__main__":
     unittest.main()
