@@ -17,8 +17,13 @@ class TestHTMLNode(unittest.TestCase):
         grandchildNode = LeafNode("b", "grandchild")
         parentNode = ParentNode("div", [grandchildNode])
         grandparentNode = ParentNode("div", [parentNode])
+        errorTest1 = ParentNode("a", [])
+        errorTest2 = ParentNode("",[grandchildNode])
         self.assertEqual(grandparentNode.to_html(), "<div><div><b>grandchild</b></div></div>")
         self.assertNotEqual(grandparentNode.to_html(), parentNode.to_html())
         self.assertIsNone(parentNode.props)
+        with self.assertRaises(ValueError):
+            errorTest1.to_html()
+            errorTest2.to_html()
 if __name__ == "__main__":
     unittest.main()
