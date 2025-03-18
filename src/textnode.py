@@ -45,3 +45,5 @@ class TextNode:
              return linkLeaf
         elif self.text_type == TextType.IMAGE:
              imageLeaf = LeafNode("img", "", ["src", "alt"])
+             return imageLeaf
+ 
