@@ -1,4 +1,3 @@
-# %%
 from textnode import TextNode, TextType
 
 def split_nodes_delimiter(old_nodes, delimiter, text_type):
@@ -39,6 +38,3 @@ def split_nodes_delimiter(old_nodes, delimiter, text_type):
 
     return newNodeList
 
-test = [TextNode("This is **bold** text", TextType.TEXT), TextNode("Bold Node", TextType.BOLD)]
-print(split_nodes_delimiter(test, "**", TextType.BOLD))
-# %%
