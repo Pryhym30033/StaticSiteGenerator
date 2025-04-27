@@ -1,3 +1,4 @@
+# %%
 import re
 
 def extract_markdown_images(text):
@@ -6,10 +7,11 @@ def extract_markdown_images(text):
 
     return matches
 
-import re
+
 def extract_markdown_links(text):
-
+    
     matches = re.findall(r"(?<!!)\[([^\[\]]*)\]\(([^\(\)]*)\)", text)
-
+    
     return matches
 
+text = "[link](thisisafakelink)"
