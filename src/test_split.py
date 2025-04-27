@@ -1,5 +1,5 @@
 import unittest
-from split import *
+from imgLinkSplit import *
 
 class TestSplit(unittest.TestCase):
     def test_split(self):
