@@ -30,4 +30,6 @@ def CopyControlFunc():
     FolderfileCopier("static", "public")
     return
 
+
+CopyControlFunc()
 # %%

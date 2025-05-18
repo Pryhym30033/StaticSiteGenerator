@@ -10,4 +10,4 @@ class TestExtract(unittest.TestCase):
         self.assertEqual(f"{linkCapture}", "[('rick roll', 'https://i.imgur.com/link/')]")
 
 if __name__ == "__main__":
-     unittest.main()
+    unittest.main()

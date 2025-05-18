@@ -1,5 +1,6 @@
 # %%
 from enum import Enum
+from inlineMarkdown import *
 
 class BlockType(Enum):
     PARAGRAPH = "paragraph"
