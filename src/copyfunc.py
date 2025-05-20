@@ -31,5 +31,4 @@ def CopyControlFunc():
     return
 
 
-CopyControlFunc()
 # %%
