@@ -3,8 +3,8 @@ import os
 import shutil
 
 def RemoveFiles():
-    shutil.rmtree("public")
-    os.mkdir("public")
+    shutil.rmtree("docs")
+    os.mkdir("docs")
     
     return
 
@@ -27,7 +27,7 @@ def FolderfileCopier(srcdir, destdir):
 
 def CopyControlFunc():
     RemoveFiles()
-    FolderfileCopier("static", "public")
+    FolderfileCopier("static", "docs")
     return
 
 

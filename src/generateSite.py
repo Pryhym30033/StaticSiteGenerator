@@ -1,7 +1,7 @@
 import os
 from generatePage import generate_page
 
-def generate_pages_recursive(dirPathContent, templatePath, destDirPath):
+def generate_pages_recursive(dirPathContent, templatePath, destDirPath, basepath):
     
     if not os.path.exists(destDirPath):
         os.mkdir(destDirPath)
@@ -13,8 +13,8 @@ def generate_pages_recursive(dirPathContent, templatePath, destDirPath):
         destination = os.path.join(destDirPath, content)
 
         if os.path.isfile(source):
-            generate_page(source, templatePath, destDirPath)
+            generate_page(source, templatePath, destDirPath, basepath)
           
         else:
-            generate_pages_recursive(source, templatePath, destination)
+            generate_pages_recursive(source, templatePath, destination, basepath)
             
